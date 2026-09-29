@@ -1,0 +1,35 @@
+# Dependencies
+frontend/node_modules/
+ai-service/.venv/
+ai-service/venv/
+
+# Build output
+frontend/dist/
+frontend/dist-ssr/
+backend/target/
+*.class
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Maven wrapper download
+.mvn/wrapper/maven-wrapper.jar
+
+# Environment and secrets
+.env
+*.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editors and OS
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db

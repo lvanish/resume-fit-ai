@@ -1,0 +1,92 @@
+[
+  {
+    "id": "case-001",
+    "expectedCategory": "VERY_STRONG",
+    "resume": "Jordan Hale\nProfessional Summary\nBackend engineer with 6 years building production Java services.\nTechnical Skills\nJava, Spring Boot, REST APIs, PostgreSQL, SQL, Docker, JUnit\nWork Experience\nSenior Backend Engineer, Northline Payments, 2020-present\n- Designed Spring Boot REST APIs for account and billing services.\n- Tuned PostgreSQL queries and indexes for reporting workloads.\n- Operated production services and wrote integration tests.\nEducation\nB.S. Computer Science, 2018",
+    "jobDescription": "Backend Engineer\nRequirements\n5+ years of experience. Java, Spring Boot, REST APIs, and PostgreSQL are required.\nResponsibilities\nDesign APIs, improve database performance, and support production services.\nPreferred Skills\nDocker and JUnit."
+  },
+  {
+    "id": "case-002",
+    "expectedCategory": "VERY_STRONG",
+    "resume": "Priya Shah\nProfessional Summary\nJava developer with 5 years of Spring Boot microservice experience.\nTechnical Skills\nJava, Spring Boot, Spring Data, REST, PostgreSQL, Maven, JUnit\nWork Experience\nJava Developer, Harbor Ledger, 2019-present\n- Built Spring Boot services consumed by internal payment tools.\n- Mapped relational schemas in PostgreSQL and wrote repository tests.\nEducation\nB.S. Software Engineering, 2019",
+    "jobDescription": "Java Developer\nRequirements\n4+ years of Java. Spring Boot and PostgreSQL are required. REST API experience is required.\nResponsibilities\nImplement backend services, write tests, and maintain SQL schemas."
+  },
+  {
+    "id": "case-003",
+    "expectedCategory": "VERY_STRONG",
+    "resume": "Elena Cho\nProfessional Summary\nSoftware engineer with 7 years on backend platforms.\nTechnical Skills\nJava, Spring Boot, Kafka, PostgreSQL, REST, Docker, AWS\nWork Experience\nSoftware Engineer, Fieldstone Systems, 2017-present\n- Built event-driven services with Kafka and Spring Boot.\n- Owned PostgreSQL data models for order processing.\n- Deployed services with Docker on AWS.\nEducation\nB.S. Computer Science, 2017",
+    "jobDescription": "Software Engineer, backend platform\nRequirements\nJava, Spring Boot, Kafka, and PostgreSQL. 5+ years required.\nResponsibilities\nBuild event-driven services and operate them in production.\nPreferred Skills\nDocker and AWS."
+  },
+  {
+    "id": "case-004",
+    "expectedCategory": "STRONG",
+    "resume": "Marcus Nguyen\nProfessional Summary\nBackend engineer with 3 years of Java service experience.\nTechnical Skills\nJava, Spring Boot, REST APIs, PostgreSQL\nWork Experience\nBackend Engineer, Lumen Cart, 2022-present\n- Implemented REST endpoints in Spring Boot.\n- Wrote SQL against PostgreSQL for catalog data.\nEducation\nB.S. Computer Science, 2022",
+    "jobDescription": "Backend Engineer\nRequirements\n5+ years of experience. Java, Spring Boot, REST APIs, PostgreSQL, and Kafka are required.\nResponsibilities\nDesign APIs and run production data pipelines."
+  },
+  {
+    "id": "case-005",
+    "expectedCategory": "STRONG",
+    "resume": "Sofia Alvarez\nProfessional Summary\nFull stack engineer with 5 years, mostly on Java backends plus a React UI.\nTechnical Skills\nJava, Spring Boot, REST, PostgreSQL, React, TypeScript\nWork Experience\nFull Stack Engineer, Cedar Health, 2019-present\n- Built the Spring Boot API used by the clinician portal.\n- Maintained the React client that calls those APIs.\nEducation\nB.S. Information Systems, 2019",
+    "jobDescription": "Backend Engineer\nRequirements\nJava, Spring Boot, REST APIs, and PostgreSQL. 4+ years.\nResponsibilities\nOwn server-side API design. UI work is handled by another team."
+  },
+  {
+    "id": "case-006",
+    "expectedCategory": "STRONG",
+    "resume": "Chris Patel\nProfessional Summary\nJava developer with 6 years building enterprise services.\nTechnical Skills\nJava, Spring Boot, REST, Oracle SQL, JUnit\nWork Experience\nJava Developer, Oakridge Mutual, 2018-present\n- Developed Spring Boot REST services for policy administration.\n- Wrote Oracle SQL and database migration scripts.\nEducation\nB.S. Computer Science, 2018",
+    "jobDescription": "Java Developer\nRequirements\nJava, Spring Boot, REST, and PostgreSQL. 4+ years.\nResponsibilities\nImplement services and maintain the relational schema."
+  },
+  {
+    "id": "case-007",
+    "expectedCategory": "MODERATE",
+    "resume": "Noah Bennett\nProfessional Summary\nSoftware engineer with 5 years building web APIs in Python.\nTechnical Skills\nPython, Django, Django REST framework, PostgreSQL, Docker\nWork Experience\nSoftware Engineer, Riverbend Analytics, 2019-present\n- Built JSON APIs and background jobs.\n- Designed PostgreSQL schemas for customer data.\nEducation\nB.S. Computer Science, 2019",
+    "jobDescription": "Backend Engineer\nRequirements\nJava, Spring Boot, and PostgreSQL. REST API experience required. 4+ years.\nResponsibilities\nBuild and operate JVM services."
+  },
+  {
+    "id": "case-008",
+    "expectedCategory": "MODERATE",
+    "resume": "Maya Ivers\nProfessional Summary\nFull stack engineer with 4 years, primarily frontend, with one Java internship project.\nTechnical Skills\nReact, TypeScript, CSS, Java, Spring Boot\nWork Experience\nFull Stack Engineer, Brightline Studio, 2021-present\n- Built React features for the marketing and account sites.\n- Contributed a small Spring Boot endpoint during a rotation in 2021.\nEducation\nB.S. Computer Science, 2021",
+    "jobDescription": "Backend Engineer\nRequirements\n4+ years with Java and Spring Boot in production. PostgreSQL and REST APIs required.\nResponsibilities\nLead backend service design."
+  },
+  {
+    "id": "case-009",
+    "expectedCategory": "MODERATE",
+    "resume": "Owen Brooks\nProfessional Summary\nJava developer with 8 years on desktop applications.\nTechnical Skills\nJava, Swing, JavaFX, JDBC, Oracle\nWork Experience\nJava Developer, Milltown Desktop, 2016-present\n- Maintained a Swing desktop client for warehouse staff.\n- Used JDBC against an Oracle database.\nEducation\nB.S. Computer Science, 2016",
+    "jobDescription": "Java Developer\nRequirements\nSpring Boot, REST APIs, and PostgreSQL. Web service experience required.\nResponsibilities\nBuild HTTP APIs for a customer portal."
+  },
+  {
+    "id": "case-010",
+    "expectedCategory": "WEAK",
+    "resume": "Lina Ortiz\nProfessional Summary\nFrontend engineer with 4 years building web interfaces.\nTechnical Skills\nReact, TypeScript, CSS, HTML, Jest\nWork Experience\nFrontend Engineer, Paperplane, 2021-present\n- Implemented responsive React screens and component tests.\n- Collaborated with designers on CSS layouts.\nEducation\nB.A. Design and Technology, 2021",
+    "jobDescription": "Backend Engineer\nRequirements\nJava, Spring Boot, Kafka, and PostgreSQL. 4+ years of backend experience.\nResponsibilities\nDesign server-side services and data pipelines."
+  },
+  {
+    "id": "case-011",
+    "expectedCategory": "WEAK",
+    "resume": "Samir Haddad\nProfessional Summary\nMobile engineer with 5 years shipping Flutter applications.\nTechnical Skills\nFlutter, Dart, Firebase, REST client integration\nWork Experience\nMobile Engineer, Northstar Transit, 2019-present\n- Built iOS and Android screens in Flutter.\n- Called existing HTTP APIs from the mobile client.\nEducation\nB.S. Computer Science, 2019",
+    "jobDescription": "Java Developer\nRequirements\nJava, Spring Boot, and PostgreSQL on the server. 4+ years.\nResponsibilities\nImplement backend services. Mobile development is out of scope."
+  },
+  {
+    "id": "case-012",
+    "expectedCategory": "WEAK",
+    "resume": "Riley Quinn\nProfessional Summary\nSoftware tester with 6 years of manual and exploratory QA.\nTechnical Skills\nTest plans, Jira, browser testing, basic SQL selects\nWork Experience\nQA Analyst, Lantern Retail, 2018-present\n- Wrote manual test cases and logged defects.\n- Ran regression checklists before releases.\nEducation\nB.A. Communications, 2018",
+    "jobDescription": "Software Engineer\nRequirements\nJava, Spring Boot, REST APIs, and PostgreSQL. 4+ years building production services.\nResponsibilities\nDesign and implement backend code."
+  },
+  {
+    "id": "case-013",
+    "expectedCategory": "VERY_WEAK",
+    "resume": "Avery Cole\nProfessional Summary\nVisual designer with 7 years producing marketing graphics.\nTechnical Skills\nFigma, Illustrator, brand guidelines, HTML email layout\nWork Experience\nGraphic Designer, Kindred Goods, 2017-present\n- Designed campaign assets and presentation decks.\nEducation\nB.F.A. Graphic Design, 2017",
+    "jobDescription": "Backend Engineer\nRequirements\nJava, Spring Boot, Kafka, and PostgreSQL.\nResponsibilities\nBuild distributed backend services."
+  },
+  {
+    "id": "case-014",
+    "expectedCategory": "VERY_WEAK",
+    "resume": "Taylor Brooks\nProfessional Summary\nOffice coordinator with 8 years supporting a regional sales team.\nTechnical Skills\nCalendar management, spreadsheets, travel booking, vendor calls\nWork Experience\nOffice Coordinator, Summit Paper, 2016-present\n- Scheduled meetings and ordered supplies.\nEducation\nA.A. Business Administration, 2016",
+    "jobDescription": "Software Engineer\nRequirements\nJava or a similar backend language, REST APIs, and a relational database. 3+ years of software engineering.\nResponsibilities\nWrite and review production code."
+  },
+  {
+    "id": "case-015",
+    "expectedCategory": "VERY_WEAK",
+    "resume": "Jamie Okonkwo\nProfessional Summary\niOS engineer with 5 years of SwiftUI application work.\nTechnical Skills\nSwift, SwiftUI, Xcode, Core Data\nWork Experience\niOS Engineer, Glasshouse, 2020-present\n- Shipped consumer iOS features in SwiftUI.\n- Stored data on device with Core Data.\nEducation\nB.S. Computer Science, 2020",
+    "jobDescription": "Java Developer\nRequirements\nJava, Spring Boot, REST, and PostgreSQL. Server-side experience required.\nResponsibilities\nImplement JVM backend services."
+  }
+]

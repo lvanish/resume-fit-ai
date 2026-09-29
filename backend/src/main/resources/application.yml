@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: resume-fit-ai
+
+server:
+  port: 8080
+
+ai:
+  service:
+    url: ${AI_SERVICE_URL:http://localhost:8000}
+    read-timeout: ${AI_SERVICE_READ_TIMEOUT:10m}
+
+app:
+  cors:
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:5173}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: never

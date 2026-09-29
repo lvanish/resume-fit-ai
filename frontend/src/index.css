@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@keyframes result-in {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.result-in {
+  animation: result-in 180ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .result-in,
+  .animate-spin {
+    animation: none;
+  }
+}
