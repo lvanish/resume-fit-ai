@@ -20,7 +20,8 @@ Out of scope for this MVP:
 
 - Resume recommendations or rewriting
 - Authentication, accounts, history, or payments
-- RAG, embeddings, vector databases, or external LLM APIs
+- LangGraph, agents, RAG, embeddings, or a vector database
+- Paid model APIs
 - PDF or DOCX upload
 
 ## Architecture
@@ -41,13 +42,90 @@ A successful response is only the Match Score:
 
 `score` is an integer from 0 to 100. It is a weighted combination of five Laya question scores. It is not an interview probability, and the API does not return the individual question scores.
 
+## AI Architecture
+
+The public Match Score is still one integer. Laya is not asked to predict an interview probability. It evaluates concrete requirements, and application code aggregates those signals. Accuracy is not established yet. LangGraph, RAG, and agents are not implemented.
+
+```
+Stage 1: LangChain + local LLM → CandidateProfile / JobProfile
+Stage 2: RequirementBuilder → atomic job requirements
+Stage 3: Laya → requirement-level decisions
+Stage 4: Deterministic scoring → Match Score 0–100
+```
+
+1. **LangChain.** `langchain-core` builds the extraction prompts and chains. `langchain-ollama` calls a local Ollama chat model and returns a Pydantic object through `with_structured_output`. The umbrella `langchain` package is not installed, because current releases depend on LangGraph.
+
+2. **LLM.** Ollama converts the resume into a four-field `CandidateProfile` and the job description into a five-field `JobProfile`. The prompts copy only facts that appear in the source text. Placeholder strings such as "None" are rejected. The model does not score the candidate.
+
+3. **Requirement builder.** `JobProfile` becomes explicit requirements: `REQUIRED_SKILL`, `PREFERRED_SKILL`, `RESPONSIBILITY`, `EXPERIENCE`, and `ROLE`.
+
+4. **Laya, requirement level.** With `REQUIREMENT_MATCHING_ENABLED=true`, each skill, responsibility, and role is a typed question over the candidate profile only. Skills and responsibilities use `noul`, which returns the probability that the answer is yes. Role uses a three-way `choice` (`MATCH`, `PARTIAL_MATCH`, `NO_MATCH`). Experience is a deterministic comparison and is not sent to Laya. Questions that fit the checkpoint go in one `Router.predict` call; otherwise they are split in category order. The typed-decisions checkpoint budgets `head_max_len` per question, not as one shared pool of questions.
+
+5. **Score.** Required skills are 55% of the score, responsibilities 15%, experience 15%, role 10%, and preferred skills 5%. The weights live in configuration. The broad five-question Laya score remains available as `BroadLayaScoringService` and is still the public path while `REQUIREMENT_MATCHING_ENABLED=false`. `LLM_EXTRACTION_ENABLED=true` can still feed extracted text to that broad path. The HTTP response remains `{ "score": N }`. Requirement probabilities stay internal.
+
+Compare the two scorers on fixed examples:
+
+```powershell
+.\.venv\Scripts\python.exe -m evaluation.compare_scoring
+```
+
+Ollama has to be running on this machine before extraction will work. Install it from [ollama.com](https://ollama.com), start the app, and pull a chat model that supports structured output:
+
+```powershell
+ollama pull qwen2.5:1.5b-instruct-q5_K_M
+```
+
+Use another installed model by setting `LLM_MODEL`. Inspect an extraction without changing the score API:
+
+```powershell
+.\.venv\Scripts\python.exe -m evaluation.test_extraction
+```
+
+## Laya Decision Primitive Evaluation
+
+Requirement-level questions currently use `noul`. Laya 0.3.21 treats `noul` as label-sensitive and documents a neutral two-option `choice` as a workaround. This benchmark compares those primitives on the same candidate state and requirement. It does not change `REQUIREMENT_MATCHING_ENABLED`, which remains `false`.
+
+Each case is asked twice in one `Router.predict` call: once as `noul`, and once as a `choice` whose labels are only `A` and `B`. `A` means the candidate evidence supports the requirement. `B` means it does not. A second call swaps those meanings so `A` means the evidence does not support the requirement and `B` means it does. The decision being asked does not change. `noul` probabilities at or above 0.5 count as MATCH. The label swap is a bias check, not a calibration.
+
+Run it with:
+
+```powershell
+.\.venv\Scripts\python.exe -m evaluation.run_laya_decision_benchmark
+```
+
+On this machine, with the installed typed-decisions checkpoint:
+
+| Set | noul accuracy | choice accuracy | noul false positives | choice false positives | label-swap changes |
+| --- | --- | --- | --- | --- | --- |
+| 15 controlled cases | 0.933 | 0.467 | 1 | 8 | 3 of 15 |
+| Relationship Manager requirements | 0.000 | 0.000 | 10 of 10 | 10 of 10 | 0 of 10 |
+| Strong backend requirements | 1.000 | 1.000 | 0 | 0 | 0 of 5 |
+
+`noul` missed only the "event-driven services" versus "Kafka experience" case, at probability 0.506. The neutral `choice` predicted MATCH for 8 of the 9 controlled NO_MATCH cases, and 3 of those 15 answers flipped when the A/B meanings were swapped. Both primitives predicted MATCH for every Relationship Manager requirement against the software-engineer profile, with `noul` probabilities about 0.63–0.66. Both predicted MATCH for Java, Spring Boot, PostgreSQL, Kafka, and REST APIs on the strong backend profile.
+
+This run does not justify replacing `noul` in production. The neutral `choice` was less accurate and label-sensitive on the controlled set. `noul` was the better of the two there, and it still does not reject the relationship-manager mismatch. Production scoring is unchanged.
+
+## Local LLM Model Selection
+
+`llama3.1` is a poor fit for this 8 GB Windows machine. Ollama 0.34.4 loads it at about 5.3 GB and runs it on CPU. A plain prompt returns text, and a two-field JSON schema can return values, but the full `CandidateProfile` / `JobProfile` schema either comes back empty or stalls. One full call took about 100 seconds.
+
+Three smaller models were run one at a time with the same prompts, schemas, and the fintech resume plus the Senior Relationship Manager job description. Structured output used `with_structured_output` in `json_schema` mode. Profiles were not edited after the model returned them. The benchmark does not call Laya.
+
+| Model | Resume | Job | Total | Quality | Notes |
+| --- | --- | --- | --- | --- | --- |
+| `qwen2.5:1.5b-instruct-q5_K_M` (1.2 GB) | PASS, 39 s | FAIL, 19 s | 59 s | FAIL | Resume skills are mostly present. The job title is present, but the duty list is empty. |
+| `llama3.2:1b` (1.5 GB) | FAIL, 20 s | FAIL, 7 s | 27 s | FAIL | Valid JSON with empty profiles. |
+| `llama3.2:3b` (2.3 GB) | PASS, 58 s | FAIL, 32 s | 91 s | FAIL | Similar job miss to Qwen, slower and larger. |
+
+The default `LLM_MODEL` is `qwen2.5:1.5b-instruct-q5_K_M` because it is the smallest model that returned a non-empty resume and job title on this hardware, in under a minute total. `LLM_MODEL` is still an environment variable. None of the three models copied the job's village-survey and collections duties into `responsibilities` on that larger schema. The profiles were later reduced to four candidate fields and five job fields so this model has a smaller structured-output target. That reduction does not change the Laya score.
+
 ## Technology stack
 
 | Area | Stack |
 | --- | --- |
 | Frontend | React, TypeScript, Vite, Tailwind CSS |
 | Backend | Java 21, Spring Boot 4.1.1, Maven |
-| AI service | Python 3.10+, FastAPI, Laya 0.3.21 (`typed-decisions`) |
+| AI service | Python 3.10+, FastAPI, Laya 0.3.21 (`typed-decisions`), LangChain core, Ollama |
 
 ## Project structure
 
@@ -85,6 +163,11 @@ AI service layout:
 | `LAYA_MODEL` | AI service | `typed-decisions` |
 | `LAYA_CHECKPOINT` | AI service | unset; optional Hugging Face revision |
 | `LAYA_INPUT_TOKEN_BUDGET` | AI service | checkpoint state limit minus a 48-token safety margin |
+| `LLM_PROVIDER` | AI service | `ollama` |
+| `OLLAMA_BASE_URL` | AI service | `http://localhost:11434` |
+| `LLM_MODEL` | AI service | `qwen2.5:1.5b-instruct-q5_K_M` |
+| `LLM_EXTRACTION_ENABLED` | AI service | `false` |
+| `REQUIREMENT_MATCHING_ENABLED` | AI service | `false`; `true` selects requirement-level scoring |
 | `AI_SERVICE_READ_TIMEOUT` | Spring Boot | `10m` (the first Laya request downloads the checkpoint) |
 
 Do not commit `.env` files. Examples live in `frontend/.env.example` and `ai-service/.env.example`.

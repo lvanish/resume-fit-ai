@@ -4,3 +4,7 @@ pydantic>=2.10.0
 pydantic-settings>=2.7.0
 laya==0.3.21
 pytest>=8.0.0
+# Structured extraction uses LangChain core and the Ollama chat integration.
+# The umbrella `langchain` package is not installed: current 1.x releases depend on LangGraph.
+langchain-core==1.6.6
+langchain-ollama==1.1.0

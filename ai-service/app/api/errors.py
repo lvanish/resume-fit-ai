@@ -10,8 +10,18 @@ from app.services.laya_service import (
     LayaInputError,
     LayaInvalidResponseError,
 )
+from app.services.llm_service import ExtractionError
 
 logger = logging.getLogger(__name__)
+
+
+def _log_analyze_failure(stage: str, exc: Exception) -> None:
+    logger.exception(
+        "requirement_matching_failed stage=%s exception_type=%s message=%s",
+        stage,
+        type(exc).__name__,
+        exc,
+    )
 
 
 def register_exception_handlers(app: FastAPI) -> None:
@@ -31,13 +41,23 @@ def register_exception_handlers(app: FastAPI) -> None:
 
     @app.exception_handler(LayaInferenceError)
     async def inference_error(_request: Request, exc: LayaInferenceError) -> JSONResponse:
+        _log_analyze_failure("laya_inference", exc)
         return JSONResponse(
             status_code=502,
             content={"code": "LAYA_INFERENCE_FAILED", "message": str(exc)},
         )
 
+    @app.exception_handler(ExtractionError)
+    async def extraction_error(_request: Request, exc: ExtractionError) -> JSONResponse:
+        _log_analyze_failure("extraction", exc)
+        return JSONResponse(
+            status_code=502,
+            content={"code": "EXTRACTION_FAILED", "message": str(exc)},
+        )
+
     @app.exception_handler(LayaInvalidResponseError)
     async def invalid_response(_request: Request, exc: LayaInvalidResponseError) -> JSONResponse:
+        _log_analyze_failure("laya_result_parsing", exc)
         return JSONResponse(
             status_code=502,
             content={"code": "LAYA_INVALID_RESPONSE", "message": str(exc)},

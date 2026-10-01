@@ -1,0 +1,247 @@
+{
+  "schema": "Schema inspection: CandidateProfile has 8 fields and 0 required keys. JobProfile has 7 fields and 0 required keys. Descriptions are one sentence. No fields were removed.",
+  "structured_output_mode": "json_schema",
+  "models": [
+    {
+      "model": "qwen2.5:1.5b-instruct-q5_K_M",
+      "model_size": "1.2 GB",
+      "structured_output_mode": "json_schema",
+      "post_processed": false,
+      "resume_outcome": "SUCCESS",
+      "resume_validation": "succeeded",
+      "resume_ms": 39459.4,
+      "resume_grade": "PASS",
+      "resume_flags": [
+        "missing_skill:PostgreSQL"
+      ],
+      "job_outcome": "SUCCESS",
+      "job_validation": "succeeded",
+      "job_ms": 19239.9,
+      "job_grade": "FAIL",
+      "job_flags": [
+        "missing_concept:customer acquisition",
+        "missing_concept:village survey",
+        "missing_concept:loan sourcing",
+        "missing_concept:collections",
+        "missing_concept:recoveries",
+        "missing_concept:reporting"
+      ],
+      "total_ms": 58699.3,
+      "quality": "FAIL",
+      "notes": "missing_skill:PostgreSQL; missing_concept:customer acquisition; missing_concept:village survey; missing_concept:loan sourcing; missing_concept:collections; missing_concept:recoveries; missing_concept:reporting",
+      "candidate_profile": {
+        "years_of_experience": null,
+        "current_or_recent_role": "Full-stack engineer",
+        "previous_roles": [
+          "Software Engineer at Abans Finserv from Jun 2025 to Aug 2026",
+          "Associate System Engineer at Airbus from Aug 2022 to Apr 2024",
+          "Technical Intern at DRDO from Jun 2021 to Aug 2021"
+        ],
+        "technical_skills": [
+          "React",
+          "TypeScript",
+          "Java Spring Boot",
+          "MySQL",
+          "Kafka",
+          "RabbitMQ",
+          "GraphQL",
+          "Redis",
+          "Docker",
+          "Azure",
+          "AWS",
+          "Kubernetes",
+          "CI/CD",
+          "JUnit",
+          "Mockito",
+          "Prometheus",
+          "Grafana",
+          "LangChain",
+          "LangGraph",
+          "LLMs",
+          "RAG retrieval",
+          "multi-step tool calling"
+        ],
+        "domains": [],
+        "responsibilities": [],
+        "education": [],
+        "certifications": []
+      },
+      "job_profile": {
+        "role_title": "Senior Relationship Manager - GL North",
+        "minimum_years_experience": null,
+        "required_skills": [
+          "Compliance",
+          "Customer Relationships",
+          "Loans",
+          "LOS",
+          "Relationship Manager",
+          "Data Entry",
+          "Customer Queries"
+        ],
+        "preferred_skills": [
+          "None"
+        ],
+        "responsibilities": [],
+        "domains": [],
+        "education_requirements": [
+          "None specified in the job description."
+        ]
+      }
+    },
+    {
+      "model": "llama3.2:1b",
+      "model_size": "1.5 GB",
+      "structured_output_mode": "json_schema",
+      "post_processed": false,
+      "resume_outcome": "EMPTY_OR_LOW_INFORMATION",
+      "resume_validation": "succeeded",
+      "resume_ms": 19667.6,
+      "resume_grade": "FAIL",
+      "resume_flags": [
+        "missing_obvious_skill",
+        "missing_obvious_title",
+        "missing_skill:Java",
+        "missing_skill:Spring Boot",
+        "missing_skill:React",
+        "missing_skill:PostgreSQL",
+        "missing_skill:MySQL",
+        "missing_skill:Kafka",
+        "missing_skill:Redis",
+        "missing_skill:Docker",
+        "missing_skill:Kubernetes",
+        "missing_skill:AWS",
+        "missing_skill:Azure",
+        "missing_skill:LangChain",
+        "missing_skill:LangGraph",
+        "missing_skill:RAG"
+      ],
+      "job_outcome": "EMPTY_OR_LOW_INFORMATION",
+      "job_validation": "succeeded",
+      "job_ms": 7332.6,
+      "job_grade": "FAIL",
+      "job_flags": [
+        "missing_obvious_role",
+        "missing_concept:customer acquisition",
+        "missing_concept:village survey",
+        "missing_concept:loan sourcing",
+        "missing_concept:collections",
+        "missing_concept:recoveries",
+        "missing_concept:customer relationship",
+        "missing_concept:compliance",
+        "missing_concept:reporting"
+      ],
+      "total_ms": 27000.2,
+      "quality": "FAIL",
+      "notes": "missing_obvious_skill; missing_obvious_title; missing_skill:Java; missing_skill:Spring Boot; missing_skill:React; missing_skill:PostgreSQL; missing_skill:MySQL; missing_skill:Kafka; missing_skill:Redis; missing_skill:Docker; missing_skill:Kubernetes; missing_skill:AWS; missing_skill:Azure; missing_skill:LangChain; missing_skill:LangGraph; missing_skill:RAG; missing_obvious_role; missing_concept:customer acquisition; missing_concept:village survey; missing_concept:loan sourcing; missing_concept:collections; missing_concept:recoveries; missing_concept:customer relationship; missing_concept:compliance; missing_concept:reporting",
+      "candidate_profile": {
+        "years_of_experience": null,
+        "current_or_recent_role": null,
+        "previous_roles": [],
+        "technical_skills": [],
+        "domains": [],
+        "responsibilities": [],
+        "education": [],
+        "certifications": []
+      },
+      "job_profile": {
+        "role_title": null,
+        "minimum_years_experience": null,
+        "required_skills": [],
+        "preferred_skills": [],
+        "responsibilities": [],
+        "domains": [],
+        "education_requirements": []
+      }
+    },
+    {
+      "model": "llama3.2:3b",
+      "model_size": "2.3 GB",
+      "structured_output_mode": "json_schema",
+      "post_processed": false,
+      "resume_outcome": "SUCCESS",
+      "resume_validation": "succeeded",
+      "resume_ms": 58421.5,
+      "resume_grade": "PASS",
+      "resume_flags": [
+        "missing_skill:Redis",
+        "missing_skill:RAG"
+      ],
+      "job_outcome": "SUCCESS",
+      "job_validation": "succeeded",
+      "job_ms": 32311.2,
+      "job_grade": "FAIL",
+      "job_flags": [
+        "missing_concept:customer acquisition",
+        "missing_concept:village survey",
+        "missing_concept:loan sourcing",
+        "missing_concept:collections",
+        "missing_concept:recoveries",
+        "missing_concept:reporting"
+      ],
+      "total_ms": 90732.7,
+      "quality": "FAIL",
+      "notes": "missing_skill:Redis; missing_skill:RAG; missing_concept:customer acquisition; missing_concept:village survey; missing_concept:loan sourcing; missing_concept:collections; missing_concept:recoveries; missing_concept:reporting",
+      "candidate_profile": {
+        "years_of_experience": null,
+        "current_or_recent_role": null,
+        "previous_roles": [
+          "Software Engineer at Abans Finserv",
+          "Associate System Engineer at Airbus",
+          "Technical Intern at DRDO"
+        ],
+        "technical_skills": [
+          "React",
+          "TypeScript",
+          "Java Spring Boot",
+          "LangChain",
+          "LangGraph",
+          "LLMs",
+          "RabbitMQ",
+          "Kafka",
+          "MySQL",
+          "PostgreSQL",
+          "SQLite",
+          "Docker",
+          "Azure",
+          "AWS",
+          "Kubernetes",
+          "CI/CD",
+          "JUnit",
+          "Mockito",
+          "Prometheus",
+          "Grafana",
+          "MongoDB",
+          "Node.js",
+          "REST APIs"
+        ],
+        "domains": [],
+        "responsibilities": [],
+        "education": [],
+        "certifications": []
+      },
+      "job_profile": {
+        "role_title": "Senior Relationship Manager - GL North",
+        "minimum_years_experience": null,
+        "required_skills": [
+          "Compliance",
+          "Customer Relationships",
+          "Loans",
+          "LOS",
+          "Relationship Manager",
+          "Data Entry",
+          "Customer Queries"
+        ],
+        "preferred_skills": [
+          "Key Skills"
+        ],
+        "responsibilities": [],
+        "domains": [
+          "Banking / BFSI"
+        ],
+        "education_requirements": [
+          "null"
+        ]
+      }
+    }
+  ]
+}

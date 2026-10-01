@@ -13,6 +13,9 @@ from dataclasses import dataclass
 
 from app.config import Settings
 from app.services.input_preprocessor import InputPreprocessor
+from app.services.llm_service import ExtractionError, LLMService
+from app.services.profile_extraction_service import ProfileExtractionService
+from app.services.profile_text import render_candidate_profile, render_job_profile
 from app.services.scoring import (
     DIMENSIONS as QUESTION_IDS,
     MAX_LEVEL,
@@ -241,6 +244,7 @@ class LayaService:
     def score(self, resume: str, job_description: str) -> MatchScoreDetails:
         cleaned_resume = _require_text(resume, "resume")
         cleaned_job = _require_text(job_description, "job description")
+        scoring_resume, scoring_job = self._texts_for_scoring(cleaned_resume, cleaned_job)
         model_name = self._model_name()
 
         try:
@@ -264,8 +268,8 @@ class LayaService:
         content_budget = self._content_budget(state_limit)
         try:
             prepared = InputPreprocessor().prepare_for_laya(
-                cleaned_resume,
-                cleaned_job,
+                scoring_resume,
+                scoring_job,
                 tokenizer,
                 content_budget=content_budget,
                 state_limit=state_limit,
@@ -348,6 +352,28 @@ class LayaService:
             compacted=prepared.compacted,
         )
 
+    def _texts_for_scoring(self, resume: str, job_description: str) -> tuple[str, str]:
+        """Use extracted profiles when enabled. Fall back to the original text."""
+        if not self._settings.llm_extraction_enabled:
+            return resume, job_description
+        try:
+            extraction = ProfileExtractionService(LLMService(self._settings))
+            candidate = extraction.extract_candidate_profile(resume)
+            job = extraction.extract_job_profile(job_description)
+        except ExtractionError:
+            logger.warning(
+                "Structured extraction failed. Scoring will use the original resume and job description. llm_model=%s",
+                self._settings.llm_model,
+            )
+            return resume, job_description
+        rendered_resume = render_candidate_profile(candidate)
+        rendered_job = render_job_profile(job)
+        if not rendered_resume.strip() or not rendered_job.strip():
+            logger.warning("Structured profiles were empty. Scoring will use the original text.")
+            return resume, job_description
+        logger.info("Scoring will use extracted profiles. llm_model=%s", self._settings.llm_model)
+        return rendered_resume, rendered_job
+
     def _content_budget(self, state_limit: int) -> int:
         margin = self._settings.laya_token_safety_margin
         if margin < 0:
@@ -387,6 +413,10 @@ def _count_state_tokens(tokenizer, state: dict) -> int:
     from laya.common import serialize_state
 
     return count_tokens(serialize_state(state), tokenizer)
+
+
+class BroadLayaScoringService(LayaService):
+    """Baseline broad Laya scoring. Requirement matching is compared against this path."""
 
 
 def _shared_router(settings: Settings):

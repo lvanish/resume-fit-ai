@@ -1,0 +1,393 @@
+{
+  "cases": [
+    {
+      "case": "strong-backend",
+      "old_score": 70,
+      "new_score": 74,
+      "required_skill_score": 0.6492,
+      "preferred_skill_score": 0.6493,
+      "responsibility_score": 0.6668,
+      "experience_score": 1.0,
+      "role_score": 1.0,
+      "batch_count": 1,
+      "batch_latency_ms": [
+        8026.3
+      ],
+      "total_latency_ms": 8026.3,
+      "requirements": [
+        {
+          "requirement": "Java",
+          "category": "REQUIRED_SKILL",
+          "probability_yes": 0.6632,
+          "decision": null
+        },
+        {
+          "requirement": "Spring Boot",
+          "category": "REQUIRED_SKILL",
+          "probability_yes": 0.6327,
+          "decision": null
+        },
+        {
+          "requirement": "PostgreSQL",
+          "category": "REQUIRED_SKILL",
+          "probability_yes": 0.659,
+          "decision": null
+        },
+        {
+          "requirement": "REST",
+          "category": "REQUIRED_SKILL",
+          "probability_yes": 0.6418,
+          "decision": null
+        },
+        {
+          "requirement": "Kafka",
+          "category": "PREFERRED_SKILL",
+          "probability_yes": 0.6566,
+          "decision": null
+        },
+        {
+          "requirement": "Docker",
+          "category": "PREFERRED_SKILL",
+          "probability_yes": 0.6421,
+          "decision": null
+        },
+        {
+          "requirement": "Build and support backend services.",
+          "category": "RESPONSIBILITY",
+          "probability_yes": 0.6668,
+          "decision": null
+        },
+        {
+          "requirement": "Backend Engineer",
+          "category": "ROLE",
+          "probability_yes": 1.0,
+          "decision": "MATCH"
+        },
+        {
+          "requirement": "minimum 4 years",
+          "category": "EXPERIENCE",
+          "probability_yes": 1.0,
+          "decision": "deterministic"
+        }
+      ]
+    },
+    {
+      "case": "frontend-vs-backend",
+      "old_score": 69,
+      "new_score": 70,
+      "required_skill_score": 0.5967,
+      "preferred_skill_score": 0.5799,
+      "responsibility_score": 0.6117,
+      "experience_score": 1.0,
+      "role_score": 1.0,
+      "batch_count": 1,
+      "batch_latency_ms": [
+        7780.2
+      ],
+      "total_latency_ms": 7780.2,
+      "requirements": [
+        {
+          "requirement": "Java",
+          "category": "REQUIRED_SKILL",
+          "probability_yes": 0.59,
+          "decision": null
+        },
+        {
+          "requirement": "Spring Boot",
+          "category": "REQUIRED_SKILL",
+          "probability_yes": 0.5971,
+          "decision": null
+        },
+        {
+          "requirement": "PostgreSQL",
+          "category": "REQUIRED_SKILL",
+          "probability_yes": 0.6173,
+          "decision": null
+        },
+        {
+          "requirement": "REST",
+          "category": "REQUIRED_SKILL",
+          "probability_yes": 0.5823,
+          "decision": null
+        },
+        {
+          "requirement": "Kafka",
+          "category": "PREFERRED_SKILL",
+          "probability_yes": 0.5903,
+          "decision": null
+        },
+        {
+          "requirement": "Docker",
+          "category": "PREFERRED_SKILL",
+          "probability_yes": 0.5696,
+          "decision": null
+        },
+        {
+          "requirement": "Build and support backend services.",
+          "category": "RESPONSIBILITY",
+          "probability_yes": 0.6117,
+          "decision": null
+        },
+        {
+          "requirement": "Backend Engineer",
+          "category": "ROLE",
+          "probability_yes": 1.0,
+          "decision": "MATCH"
+        },
+        {
+          "requirement": "minimum 4 years",
+          "category": "EXPERIENCE",
+          "probability_yes": 1.0,
+          "decision": "deterministic"
+        }
+      ]
+    },
+    {
+      "case": "sales-mismatch",
+      "old_score": 73,
+      "new_score": 66,
+      "required_skill_score": 0.6528,
+      "preferred_skill_score": 0.5,
+      "responsibility_score": 0.6406,
+      "experience_score": 0.5,
+      "role_score": 1.0,
+      "batch_count": 1,
+      "batch_latency_ms": [
+        46680.7
+      ],
+      "total_latency_ms": 46681.7,
+      "requirements": [
+        {
+          "requirement": "Compliance",
+          "category": "REQUIRED_SKILL",
+          "probability_yes": 0.6482,
+          "decision": null
+        },
+        {
+          "requirement": "Customer Relationships",
+          "category": "REQUIRED_SKILL",
+          "probability_yes": 0.657,
+          "decision": null
+        },
+        {
+          "requirement": "Loans",
+          "category": "REQUIRED_SKILL",
+          "probability_yes": 0.6516,
+          "decision": null
+        },
+        {
+          "requirement": "LOS",
+          "category": "REQUIRED_SKILL",
+          "probability_yes": 0.6574,
+          "decision": null
+        },
+        {
+          "requirement": "Relationship Manager",
+          "category": "REQUIRED_SKILL",
+          "probability_yes": 0.646,
+          "decision": null
+        },
+        {
+          "requirement": "Data Entry",
+          "category": "REQUIRED_SKILL",
+          "probability_yes": 0.6507,
+          "decision": null
+        },
+        {
+          "requirement": "Customer Queries",
+          "category": "REQUIRED_SKILL",
+          "probability_yes": 0.6588,
+          "decision": null
+        },
+        {
+          "requirement": "Conduct village surveys and prospecting in selected villages.",
+          "category": "RESPONSIBILITY",
+          "probability_yes": 0.6358,
+          "decision": null
+        },
+        {
+          "requirement": "Source new customers and form JLG groups.",
+          "category": "RESPONSIBILITY",
+          "probability_yes": 0.6429,
+          "decision": null
+        },
+        {
+          "requirement": "Promote financial literacy amongst potential borrowers.",
+          "category": "RESPONSIBILITY",
+          "probability_yes": 0.6216,
+          "decision": null
+        },
+        {
+          "requirement": "Collect information needed for sourcing and validate documents.",
+          "category": "RESPONSIBILITY",
+          "probability_yes": 0.6482,
+          "decision": null
+        },
+        {
+          "requirement": "Coordinate with branch management for approvals and disbursements.",
+          "category": "RESPONSIBILITY",
+          "probability_yes": 0.6478,
+          "decision": null
+        },
+        {
+          "requirement": "Plan customer center meetings.",
+          "category": "RESPONSIBILITY",
+          "probability_yes": 0.647,
+          "decision": null
+        },
+        {
+          "requirement": "Resolve customer queries and promote cross-sell opportunities.",
+          "category": "RESPONSIBILITY",
+          "probability_yes": 0.6401,
+          "decision": null
+        },
+        {
+          "requirement": "Manage customer portfolio.",
+          "category": "RESPONSIBILITY",
+          "probability_yes": 0.6428,
+          "decision": null
+        },
+        {
+          "requirement": "Ensure collections and recoveries are completed on schedule.",
+          "category": "RESPONSIBILITY",
+          "probability_yes": 0.6401,
+          "decision": null
+        },
+        {
+          "requirement": "Carry out end-use monitoring of loans.",
+          "category": "RESPONSIBILITY",
+          "probability_yes": 0.6511,
+          "decision": null
+        },
+        {
+          "requirement": "Maintain customer relationships and compliance.",
+          "category": "RESPONSIBILITY",
+          "probability_yes": 0.6361,
+          "decision": null
+        },
+        {
+          "requirement": "Prepare daily reports.",
+          "category": "RESPONSIBILITY",
+          "probability_yes": 0.6413,
+          "decision": null
+        },
+        {
+          "requirement": "Perform reconciliation with Credit and Operations.",
+          "category": "RESPONSIBILITY",
+          "probability_yes": 0.6332,
+          "decision": null
+        },
+        {
+          "requirement": "Relationship Manager",
+          "category": "ROLE",
+          "probability_yes": 1.0,
+          "decision": "MATCH"
+        },
+        {
+          "requirement": "experience not stated",
+          "category": "EXPERIENCE",
+          "probability_yes": 0.5,
+          "decision": "deterministic"
+        }
+      ]
+    },
+    {
+      "case": "mixed-software",
+      "old_score": 66,
+      "new_score": 63,
+      "required_skill_score": 0.5637,
+      "preferred_skill_score": 0.5581,
+      "responsibility_score": 0.5834,
+      "experience_score": 1.0,
+      "role_score": 0.5,
+      "batch_count": 1,
+      "batch_latency_ms": [
+        8097.5
+      ],
+      "total_latency_ms": 8097.5,
+      "requirements": [
+        {
+          "requirement": "Java",
+          "category": "REQUIRED_SKILL",
+          "probability_yes": 0.5552,
+          "decision": null
+        },
+        {
+          "requirement": "Spring Boot",
+          "category": "REQUIRED_SKILL",
+          "probability_yes": 0.5628,
+          "decision": null
+        },
+        {
+          "requirement": "PostgreSQL",
+          "category": "REQUIRED_SKILL",
+          "probability_yes": 0.5851,
+          "decision": null
+        },
+        {
+          "requirement": "REST",
+          "category": "REQUIRED_SKILL",
+          "probability_yes": 0.5519,
+          "decision": null
+        },
+        {
+          "requirement": "Kafka",
+          "category": "PREFERRED_SKILL",
+          "probability_yes": 0.5585,
+          "decision": null
+        },
+        {
+          "requirement": "Docker",
+          "category": "PREFERRED_SKILL",
+          "probability_yes": 0.5578,
+          "decision": null
+        },
+        {
+          "requirement": "Build and support backend services.",
+          "category": "RESPONSIBILITY",
+          "probability_yes": 0.5834,
+          "decision": null
+        },
+        {
+          "requirement": "Backend Engineer",
+          "category": "ROLE",
+          "probability_yes": 0.5,
+          "decision": "PARTIAL_MATCH"
+        },
+        {
+          "requirement": "minimum 4 years",
+          "category": "EXPERIENCE",
+          "probability_yes": 1.0,
+          "decision": "deterministic"
+        }
+      ]
+    }
+  ],
+  "binary_probes": [
+    {
+      "probe": "kafka-explicit",
+      "requirement": "Kafka",
+      "probability_yes": 0.6
+    },
+    {
+      "probe": "kafka-event-driven",
+      "requirement": "Kafka",
+      "probability_yes": 0.5479
+    },
+    {
+      "probe": "react-explicit",
+      "requirement": "React",
+      "probability_yes": 0.6343
+    },
+    {
+      "probe": "spring-against-react",
+      "requirement": "Spring Boot",
+      "probability_yes": 0.5743
+    }
+  ],
+  "comparison": {
+    "strong_backend_required_skill_score_gt_frontend": true,
+    "strong_backend_final_score_gt_frontend": true,
+    "strong_backend_final_score_gt_sales": true
+  }
+}

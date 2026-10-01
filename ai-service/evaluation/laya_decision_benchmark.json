@@ -1,0 +1,458 @@
+{
+  "requirement_matching_enabled": false,
+  "controlled": {
+    "count": 15,
+    "noul_accuracy": 0.9333333333333333,
+    "choice_accuracy": 0.4666666666666667,
+    "noul_false_positives": 1,
+    "noul_false_negatives": 0,
+    "choice_false_positives": 8,
+    "choice_false_negatives": 0,
+    "noul_confusion": {
+      "MATCH": {
+        "MATCH": 6,
+        "NO_MATCH": 0
+      },
+      "NO_MATCH": {
+        "MATCH": 1,
+        "NO_MATCH": 8
+      }
+    },
+    "choice_confusion": {
+      "MATCH": {
+        "MATCH": 6,
+        "NO_MATCH": 0
+      },
+      "NO_MATCH": {
+        "MATCH": 8,
+        "NO_MATCH": 1
+      }
+    },
+    "label_swap_stable": 12,
+    "label_swap_changed": 3
+  },
+  "relationship_manager": {
+    "count": 10,
+    "noul_accuracy": 0.0,
+    "choice_accuracy": 0.0,
+    "noul_false_positives": 10,
+    "noul_false_negatives": 0,
+    "choice_false_positives": 10,
+    "choice_false_negatives": 0,
+    "noul_confusion": {
+      "MATCH": {
+        "MATCH": 0,
+        "NO_MATCH": 0
+      },
+      "NO_MATCH": {
+        "MATCH": 10,
+        "NO_MATCH": 0
+      }
+    },
+    "choice_confusion": {
+      "MATCH": {
+        "MATCH": 0,
+        "NO_MATCH": 0
+      },
+      "NO_MATCH": {
+        "MATCH": 10,
+        "NO_MATCH": 0
+      }
+    },
+    "label_swap_stable": 10,
+    "label_swap_changed": 0
+  },
+  "strong_backend": {
+    "count": 5,
+    "noul_accuracy": 1.0,
+    "choice_accuracy": 1.0,
+    "noul_false_positives": 0,
+    "noul_false_negatives": 0,
+    "choice_false_positives": 0,
+    "choice_false_negatives": 0,
+    "noul_confusion": {
+      "MATCH": {
+        "MATCH": 5,
+        "NO_MATCH": 0
+      },
+      "NO_MATCH": {
+        "MATCH": 0,
+        "NO_MATCH": 0
+      }
+    },
+    "choice_confusion": {
+      "MATCH": {
+        "MATCH": 5,
+        "NO_MATCH": 0
+      },
+      "NO_MATCH": {
+        "MATCH": 0,
+        "NO_MATCH": 0
+      }
+    },
+    "label_swap_stable": 5,
+    "label_swap_changed": 0
+  },
+  "rows": [
+    {
+      "test_id": "java-explicit",
+      "group": "controlled",
+      "requirement": "Java",
+      "expected": "MATCH",
+      "noul_result": "MATCH",
+      "noul_probability": 0.5811,
+      "choice_result": "MATCH",
+      "choice_swapped_result": "MATCH",
+      "elapsed_ms": 50952.7,
+      "swap_elapsed_ms": 3124.2
+    },
+    {
+      "test_id": "java-profile-kafka",
+      "group": "controlled",
+      "requirement": "Kafka",
+      "expected": "NO_MATCH",
+      "noul_result": "NO_MATCH",
+      "noul_probability": 0.4787,
+      "choice_result": "MATCH",
+      "choice_swapped_result": "MATCH",
+      "elapsed_ms": 50952.7,
+      "swap_elapsed_ms": 3124.2
+    },
+    {
+      "test_id": "java-profile-postgresql",
+      "group": "controlled",
+      "requirement": "PostgreSQL",
+      "expected": "MATCH",
+      "noul_result": "MATCH",
+      "noul_probability": 0.5542,
+      "choice_result": "MATCH",
+      "choice_swapped_result": "MATCH",
+      "elapsed_ms": 50952.7,
+      "swap_elapsed_ms": 3124.2
+    },
+    {
+      "test_id": "react-explicit",
+      "group": "controlled",
+      "requirement": "React",
+      "expected": "MATCH",
+      "noul_result": "MATCH",
+      "noul_probability": 0.5248,
+      "choice_result": "MATCH",
+      "choice_swapped_result": "MATCH",
+      "elapsed_ms": 5346.9,
+      "swap_elapsed_ms": 1878.2
+    },
+    {
+      "test_id": "react-profile-spring",
+      "group": "controlled",
+      "requirement": "Spring Boot",
+      "expected": "NO_MATCH",
+      "noul_result": "NO_MATCH",
+      "noul_probability": 0.322,
+      "choice_result": "NO_MATCH",
+      "choice_swapped_result": "NO_MATCH",
+      "elapsed_ms": 5346.9,
+      "swap_elapsed_ms": 1878.2
+    },
+    {
+      "test_id": "react-profile-java",
+      "group": "controlled",
+      "requirement": "Java",
+      "expected": "NO_MATCH",
+      "noul_result": "NO_MATCH",
+      "noul_probability": 0.3448,
+      "choice_result": "MATCH",
+      "choice_swapped_result": "NO_MATCH",
+      "elapsed_ms": 5346.9,
+      "swap_elapsed_ms": 1878.2
+    },
+    {
+      "test_id": "backend-services",
+      "group": "controlled",
+      "requirement": "Develop backend services",
+      "expected": "MATCH",
+      "noul_result": "MATCH",
+      "noul_probability": 0.6207,
+      "choice_result": "MATCH",
+      "choice_swapped_result": "MATCH",
+      "elapsed_ms": 2173.8,
+      "swap_elapsed_ms": 1288.0
+    },
+    {
+      "test_id": "rest-apis",
+      "group": "controlled",
+      "requirement": "Build REST APIs",
+      "expected": "MATCH",
+      "noul_result": "MATCH",
+      "noul_probability": 0.6249,
+      "choice_result": "MATCH",
+      "choice_swapped_result": "MATCH",
+      "elapsed_ms": 2173.8,
+      "swap_elapsed_ms": 1288.0
+    },
+    {
+      "test_id": "react-work-backend",
+      "group": "controlled",
+      "requirement": "Develop backend services",
+      "expected": "NO_MATCH",
+      "noul_result": "NO_MATCH",
+      "noul_probability": 0.4339,
+      "choice_result": "MATCH",
+      "choice_swapped_result": "MATCH",
+      "elapsed_ms": 1016.1,
+      "swap_elapsed_ms": 717.5
+    },
+    {
+      "test_id": "role-software",
+      "group": "controlled",
+      "requirement": "Software Engineer",
+      "expected": "MATCH",
+      "noul_result": "MATCH",
+      "noul_probability": 0.5911,
+      "choice_result": "MATCH",
+      "choice_swapped_result": "MATCH",
+      "elapsed_ms": 1994.2,
+      "swap_elapsed_ms": 1015.1
+    },
+    {
+      "test_id": "role-relationship-manager",
+      "group": "controlled",
+      "requirement": "Relationship Manager",
+      "expected": "NO_MATCH",
+      "noul_result": "NO_MATCH",
+      "noul_probability": 0.4337,
+      "choice_result": "MATCH",
+      "choice_swapped_result": "NO_MATCH",
+      "elapsed_ms": 1994.2,
+      "swap_elapsed_ms": 1015.1
+    },
+    {
+      "test_id": "rabbitmq-not-kafka",
+      "group": "controlled",
+      "requirement": "Kafka",
+      "expected": "NO_MATCH",
+      "noul_result": "NO_MATCH",
+      "noul_probability": 0.3819,
+      "choice_result": "MATCH",
+      "choice_swapped_result": "NO_MATCH",
+      "elapsed_ms": 1056.3,
+      "swap_elapsed_ms": 790.1
+    },
+    {
+      "test_id": "event-driven-not-kafka",
+      "group": "controlled",
+      "requirement": "Kafka experience",
+      "expected": "NO_MATCH",
+      "noul_result": "MATCH",
+      "noul_probability": 0.5061,
+      "choice_result": "MATCH",
+      "choice_swapped_result": "MATCH",
+      "elapsed_ms": 1095.7,
+      "swap_elapsed_ms": 655.7
+    },
+    {
+      "test_id": "frontend-role-backend",
+      "group": "controlled",
+      "requirement": "Backend Engineer",
+      "expected": "NO_MATCH",
+      "noul_result": "NO_MATCH",
+      "noul_probability": 0.449,
+      "choice_result": "MATCH",
+      "choice_swapped_result": "MATCH",
+      "elapsed_ms": 1058.8,
+      "swap_elapsed_ms": 642.5
+    },
+    {
+      "test_id": "java-not-spring",
+      "group": "controlled",
+      "requirement": "Spring Boot",
+      "expected": "NO_MATCH",
+      "noul_result": "NO_MATCH",
+      "noul_probability": 0.4709,
+      "choice_result": "MATCH",
+      "choice_swapped_result": "MATCH",
+      "elapsed_ms": 1179.6,
+      "swap_elapsed_ms": 651.7
+    },
+    {
+      "test_id": "rm-1",
+      "group": "relationship-manager",
+      "requirement": "Customer Relationships",
+      "expected": "NO_MATCH",
+      "noul_result": "MATCH",
+      "noul_probability": 0.6555,
+      "choice_result": "MATCH",
+      "choice_swapped_result": "MATCH",
+      "elapsed_ms": 31573.2,
+      "swap_elapsed_ms": 14527.4
+    },
+    {
+      "test_id": "rm-2",
+      "group": "relationship-manager",
+      "requirement": "Loans",
+      "expected": "NO_MATCH",
+      "noul_result": "MATCH",
+      "noul_probability": 0.6343,
+      "choice_result": "MATCH",
+      "choice_swapped_result": "MATCH",
+      "elapsed_ms": 31573.2,
+      "swap_elapsed_ms": 14527.4
+    },
+    {
+      "test_id": "rm-3",
+      "group": "relationship-manager",
+      "requirement": "LOS",
+      "expected": "NO_MATCH",
+      "noul_result": "MATCH",
+      "noul_probability": 0.6323,
+      "choice_result": "MATCH",
+      "choice_swapped_result": "MATCH",
+      "elapsed_ms": 31573.2,
+      "swap_elapsed_ms": 14527.4
+    },
+    {
+      "test_id": "rm-4",
+      "group": "relationship-manager",
+      "requirement": "Relationship Manager",
+      "expected": "NO_MATCH",
+      "noul_result": "MATCH",
+      "noul_probability": 0.643,
+      "choice_result": "MATCH",
+      "choice_swapped_result": "MATCH",
+      "elapsed_ms": 31573.2,
+      "swap_elapsed_ms": 14527.4
+    },
+    {
+      "test_id": "rm-5",
+      "group": "relationship-manager",
+      "requirement": "Data Entry",
+      "expected": "NO_MATCH",
+      "noul_result": "MATCH",
+      "noul_probability": 0.6461,
+      "choice_result": "MATCH",
+      "choice_swapped_result": "MATCH",
+      "elapsed_ms": 31573.2,
+      "swap_elapsed_ms": 14527.4
+    },
+    {
+      "test_id": "rm-6",
+      "group": "relationship-manager",
+      "requirement": "Customer Queries",
+      "expected": "NO_MATCH",
+      "noul_result": "MATCH",
+      "noul_probability": 0.6476,
+      "choice_result": "MATCH",
+      "choice_swapped_result": "MATCH",
+      "elapsed_ms": 31573.2,
+      "swap_elapsed_ms": 14527.4
+    },
+    {
+      "test_id": "rm-7",
+      "group": "relationship-manager",
+      "requirement": "Village surveys",
+      "expected": "NO_MATCH",
+      "noul_result": "MATCH",
+      "noul_probability": 0.6376,
+      "choice_result": "MATCH",
+      "choice_swapped_result": "MATCH",
+      "elapsed_ms": 31573.2,
+      "swap_elapsed_ms": 14527.4
+    },
+    {
+      "test_id": "rm-8",
+      "group": "relationship-manager",
+      "requirement": "Customer sourcing",
+      "expected": "NO_MATCH",
+      "noul_result": "MATCH",
+      "noul_probability": 0.6453,
+      "choice_result": "MATCH",
+      "choice_swapped_result": "MATCH",
+      "elapsed_ms": 31573.2,
+      "swap_elapsed_ms": 14527.4
+    },
+    {
+      "test_id": "rm-9",
+      "group": "relationship-manager",
+      "requirement": "Collections",
+      "expected": "NO_MATCH",
+      "noul_result": "MATCH",
+      "noul_probability": 0.63,
+      "choice_result": "MATCH",
+      "choice_swapped_result": "MATCH",
+      "elapsed_ms": 31573.2,
+      "swap_elapsed_ms": 14527.4
+    },
+    {
+      "test_id": "rm-10",
+      "group": "relationship-manager",
+      "requirement": "Recoveries",
+      "expected": "NO_MATCH",
+      "noul_result": "MATCH",
+      "noul_probability": 0.6431,
+      "choice_result": "MATCH",
+      "choice_swapped_result": "MATCH",
+      "elapsed_ms": 31573.2,
+      "swap_elapsed_ms": 14527.4
+    },
+    {
+      "test_id": "backend-Java",
+      "group": "strong-backend",
+      "requirement": "Java",
+      "expected": "MATCH",
+      "noul_result": "MATCH",
+      "noul_probability": 0.6771,
+      "choice_result": "MATCH",
+      "choice_swapped_result": "MATCH",
+      "elapsed_ms": 7058.3,
+      "swap_elapsed_ms": 3642.4
+    },
+    {
+      "test_id": "backend-Spring Boot",
+      "group": "strong-backend",
+      "requirement": "Spring Boot",
+      "expected": "MATCH",
+      "noul_result": "MATCH",
+      "noul_probability": 0.6577,
+      "choice_result": "MATCH",
+      "choice_swapped_result": "MATCH",
+      "elapsed_ms": 7058.3,
+      "swap_elapsed_ms": 3642.4
+    },
+    {
+      "test_id": "backend-PostgreSQL",
+      "group": "strong-backend",
+      "requirement": "PostgreSQL",
+      "expected": "MATCH",
+      "noul_result": "MATCH",
+      "noul_probability": 0.6526,
+      "choice_result": "MATCH",
+      "choice_swapped_result": "MATCH",
+      "elapsed_ms": 7058.3,
+      "swap_elapsed_ms": 3642.4
+    },
+    {
+      "test_id": "backend-Kafka",
+      "group": "strong-backend",
+      "requirement": "Kafka",
+      "expected": "MATCH",
+      "noul_result": "MATCH",
+      "noul_probability": 0.6429,
+      "choice_result": "MATCH",
+      "choice_swapped_result": "MATCH",
+      "elapsed_ms": 7058.3,
+      "swap_elapsed_ms": 3642.4
+    },
+    {
+      "test_id": "backend-REST APIs",
+      "group": "strong-backend",
+      "requirement": "REST APIs",
+      "expected": "MATCH",
+      "noul_result": "MATCH",
+      "noul_probability": 0.7031,
+      "choice_result": "MATCH",
+      "choice_swapped_result": "MATCH",
+      "elapsed_ms": 7058.3,
+      "swap_elapsed_ms": 3642.4
+    }
+  ]
+}
